@@ -1,102 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About me</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>About — Surgeon</title>
     <style>
-        :root{font-family:Arial, Helvetica, sans-serif;color:#222}
-        body{margin:0;padding:0;line-height:1.6;background:#f7f7f7}
-        header{background:blue;color:rgb(0, 60, 255);padding:40px 20px;text-align:center}
-        .container{max-width:1000px;margin:20px auto;padding:0 20px}
-        .profile{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
-        .avatar{width:140px;height:140px;border-radius:10px;background:linear-gradient(135deg,#fff,#e6f2ff);display:flex;align-items:center;justify-content:center;font-weight:bold;color:#0b79d0}
-        h1,h2{margin:0 0 10px}
-        p{margin:0 0 10px}
-        .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:16px}
-        .card{background:#fff;padding:16px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.08)}
-        ul{padding-left:18px;margin:0}
-        footer{text-align:center;padding:16px;color:aqua;font-size:14px}
-        .nav{margin-top:8px}
-        .nav a{color:#fff;margin:0 8px;text-decoration:wavy;font-weight:600}
-        .contact a{color:red;text-decoration:none}
+        :root{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#222}
+        body{margin:0;background:#f4f6f8}
+        header{background:#0b5; color:#012;padding:36px 20px;text-align:center}
+        .container{max-width:900px;margin:24px auto;padding:0 20px}
+        .profile{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+        .avatar{width:120px;height:120px;border-radius:8px;background:#fff;border:2px solid #e6e9ea;display:flex;align-items:center;justify-content:center;font-weight:700;color:#0b5}
+        h1{margin:0 0 6px;font-size:24px}
+        h2{margin:18px 0 8px;font-size:18px}
+        p{margin:0 0 10px;color:#2b2b2b}
+        .card{background:#fff;padding:16px;border-radius:8px;box-shadow:0 2px 8px rgba(15,20,25,0.06)}
+        .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:12px}
+        ul{margin:0;padding-left:18px}
+        footer{text-align:center;padding:14px;color:#6b6b6b;font-size:13px}
+        a{color:#046; text-decoration:none}
+        .meta{font-size:13px;color:#536070}
     </style>
 </head>
 <body>
     <header>
-        <h1>Hello, I'm David Omuse</h1>
-        <nav class="nav">
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
-        </nav>
+        <div class="container">
+            <h1>Dr. [Your Name], General and Trauma Surgeon</h1>
+            <div class="meta">Board-certified surgeon • Acute care & elective procedures • Patient-centered care</div>
+        </div>
     </header>
 
     <main class="container">
-        <section id="about" class="card profile">
-            <div class="avatar">DO</div>
+        <section class="card profile" aria-labelledby="about-title">
+            <div class="avatar">Dr</div>
             <div>
-                <h2>Presentation</h2>
-                <p>I am a software developer with a focus on web applications, interfaces, and tools that improve user workflows. I enjoy creating clean designs, writing readable code, and solving practical problems.</p>
-                <p>My experience includes JavaScript, TypeScript, Python, and working with modern web frameworks, APIs, and development workflows.</p>
+                <h2 id="about-title">About</h2>
+                <p>I am a practicing surgeon specializing in general and trauma surgery. My work focuses on acute care, minimally invasive techniques, and evidence-based perioperative management to optimize patient outcomes.</p>
+                <p>I balance emergency operative responsibilities with elective procedures, mentor trainees, and participate in quality improvement initiatives and clinical research.</p>
             </div>
         </section>
 
-        <section id="projects">
-            <h2 style="margin-top:18px">Projects</h2>
+        <section aria-labelledby="services-title">
+            <h2 id="services-title">Clinical Services</h2>
             <div class="grid">
                 <div class="card">
-                    <h3>Project A</h3>
-                    <p>Single-page app demonstrating interactive UI and API integration.</p>
-                    <p><a href="#" aria-label="Project A">View repo</a></p>
+                    <h3>Emergency & Trauma Surgery</h3>
+                    <p>Management of acute abdominal catastrophes, hemorrhage control, exploratory laparotomy, and stabilization of polytrauma patients.</p>
                 </div>
                 <div class="card">
-                    <h3>Project B</h3>
-                    <p>Tool for automating repetitive developer tasks.</p>
-                    <p><a href="#" aria-label="Project B">View demo</a></p>
+                    <h3>Minimally Invasive Surgery</h3>
+                    <p>Laparoscopic cholecystectomy, appendectomy, hernia repair, and diagnostic laparoscopy with focus on rapid recovery.</p>
                 </div>
                 <div class="card">
-                    <h3>Project C</h3>
-                    <p>Open-source library with clear docs and tests.</p>
-                    <p><a href="#" aria-label="Project C">Learn more</a></p>
+                    <h3>Elective General Surgery</h3>
+                    <p>Hernia repairs, bowel resections, breast surgery consults, and benign gastrointestinal procedures with individualized care plans.</p>
                 </div>
             </div>
         </section>
 
-        <section id="skills">
-            <h2 style="margin-top:18px">Skills</h2>
+        <section aria-labelledby="skills-title">
+            <h2 id="skills-title">Skills & Expertise</h2>
             <div class="grid">
                 <div class="card">
-                    <h4>Languages</h4>
+                    <h4>Technical Skills</h4>
                     <ul>
-                        <li>JavaScript / TypeScript</li>
-                        <li>Python</li>
-                        <li>HTML & CSS</li>
+                        <li>Advanced laparoscopic techniques</li>
+                        <li>Damage-control surgery</li>
+                        <li>Vascular control and hemostasis</li>
                     </ul>
                 </div>
                 <div class="card">
-                    <h4>Frameworks & Tools</h4>
+                    <h4>Clinical & Perioperative</h4>
                     <ul>
-                        <li>React, Node.js</li>
-                        <li>Git, Docker</li>
-                        <li>REST & GraphQL</li>
+                        <li>Critical care decision-making</li>
+                        <li>ERCP and multidisciplinary coordination</li>
+                        <li>Enhanced recovery after surgery (ERAS)</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <section id="contact">
-            <h2 style="margin-top:18px">Contact</h2>
-            <div class="card contact">
-                <p>Email: <a href="mailto:john.doe@example.com">john.doe@example.com</a></p>
-                <p>LinkedIn: <a href="#">linkedin.com/in/johndoe</a></p>
+        <section id="contact" aria-labelledby="contact-title">
+            <h2 id="contact-title">Contact & Appointments</h2>
+            <div class="card">
+                <p>Email: <a href="mailto:your.email@hospital.org">your.email@hospital.org</a></p>
+                <p>Clinic: General Surgery Outpatient Unit — Mon/Wed/Fri (by appointment)</p>
+                <p>For urgent referrals, contact the hospital switchboard or on-call surgical team.</p>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="container">© 2026 David Omuse — Built with simple HTML & CSS</div>
+        <div class="container">© 2026 Dr. [Your Name] — Surgeon • Confidential patient care</div>
     </footer>
 </body>
 </html>
