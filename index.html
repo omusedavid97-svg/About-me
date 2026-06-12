@@ -26,11 +26,12 @@
         .feature-img{width:80px;height:80px;background:#f0f4f8;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:40px;border:1px solid #d4e4f0}
         .hero{padding:20px;border-radius:10px;margin-bottom:22px;background:linear-gradient(135deg,#3b82f6,#8b5cf6,#ec4899);color:#fff;display:flex;align-items:center;gap:18px;box-shadow:0 12px 30px rgba(59,130,246,0.18)}
         .hero .symbol{width:90px;height:90px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.18);border-radius:50%;box-shadow:0 10px 18px rgba(0,0,0,0.15)}
-        .heart-beat{width:60px;height:60px;display:flex;align-items:center;justify-content:center}
-        .heart-shape{width:32px;height:32px;position:relative;transform:rotate(-45deg);animation:pump 1s ease-in-out infinite}
-        .heart-shape::before,.heart-shape::after{content:"";width:32px;height:32px;background:#fff;border-radius:50%;position:absolute;top:0;left:0}
-        .heart-shape::before{left:16px}
-        .heart-shape::after{top:-16px}
+        .heart-beat{width:80px;height:80px;display:flex;align-items:center;justify-content:center}
+        /* lifelike red heart */
+        .heart-shape{width:40px;height:40px;position:relative;transform:rotate(-45deg);animation:pump 1s ease-in-out infinite;filter:drop-shadow(0 6px 8px rgba(0,0,0,0.18))}
+        .heart-shape::before,.heart-shape::after{content:"";width:40px;height:40px;border-radius:50%;position:absolute;top:0;left:0;/* red gradient */background:radial-gradient(circle at 30% 30%, #fff3f3 0%, rgba(255,255,255,0.6) 6%, rgba(255,77,79,0.95) 40%, #e60026 100%)}
+        .heart-shape::before{left:20px}
+        .heart-shape::after{top:-20px}
         @keyframes pump{0%,100%{transform:rotate(-45deg) scale(1)}50%{transform:rotate(-45deg) scale(1.2)}}
         .hero h2{margin:0;font-size:22px;line-height:1.2}
         .hero p{margin:6px 0 0;font-size:14px;color:rgba(255,255,255,0.95)}
