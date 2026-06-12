@@ -24,12 +24,42 @@
         .contact a{color:#0b63b0;text-decoration:none}
         .cardiac-features{display:flex;gap:15px;margin-top:15px;flex-wrap:wrap}
         .feature-img{width:80px;height:80px;background:#f0f4f8;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:40px;border:1px solid #d4e4f0}
+        .hero{padding:20px;border-radius:10px;margin-bottom:22px;background:linear-gradient(135deg,#3b82f6,#8b5cf6,#ec4899);color:#fff;display:flex;align-items:center;gap:18px;box-shadow:0 12px 30px rgba(59,130,246,0.18)}
+        .hero .symbol{width:90px;height:90px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.18);border-radius:50%;box-shadow:0 10px 18px rgba(0,0,0,0.15)}
+        .hero h2{margin:0;font-size:22px;line-height:1.2}
+        .hero p{margin:6px 0 0;font-size:14px;color:rgba(255,255,255,0.95)}
         footer{margin-top:20px;font-size:13px;color:#6b7a8c}
     </style>
 </head>
 
 <body>
     <div class="container">
+        <section class="hero">
+            <div class="symbol" aria-hidden="true">
+                <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="gradA" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#fbbf24"/>
+                            <stop offset="100%" stop-color="#ec4899"/>
+                        </linearGradient>
+                        <linearGradient id="gradB" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#34d399"/>
+                            <stop offset="100%" stop-color="#3b82f6"/>
+                        </linearGradient>
+                    </defs>
+                    <rect x="46" y="15" width="28" height="90" rx="10" fill="url(#gradA)"/>
+                    <rect x="15" y="46" width="90" height="28" rx="10" fill="url(#gradA)"/>
+                    <path d="M60 20c10 18 10 36 0 54c-10 18-10 36 0 54" fill="none" stroke="url(#gradB)" stroke-width="8" stroke-linecap="round"/>
+                    <path d="M55 20c-10 18-10 36 0 54c10 18 10 36 0 54" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+                    <circle cx="60" cy="20" r="5" fill="#fff"/>
+                    <circle cx="60" cy="100" r="5" fill="#fff"/>
+                </svg>
+            </div>
+            <div>
+                <h2>Guardian of Hearts & Lungs</h2>
+                <p>Vibrant emblem with a twining snake around a cross, symbolizing healing, precision, and surgical mastery.</p>
+            </div>
+        </section>
         <header>
             <div class="avatar">Dr<br>David</div>
             <div>
