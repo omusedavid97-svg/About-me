@@ -1,97 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>About — Surgeon</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DR. DAVID</title>
     <style>
-        :root{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#222}
-        body{margin:0;background:#f4f6f8}
-        header{background:#0b5; color:#012;padding:36px 20px;text-align:center}
-        .container{max-width:900px;margin:24px auto;padding:0 20px}
-        .profile{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
-        .avatar{width:120px;height:120px;border-radius:8px;background:#fff;border:2px solid #e6e9ea;display:flex;align-items:center;justify-content:center;font-weight:700;color:#0b5}
-        h1{margin:0 0 6px;font-size:24px}
-        h2{margin:18px 0 8px;font-size:18px}
-        p{margin:0 0 10px;color:#2b2b2b}
-        .card{background:#fff;padding:16px;border-radius:8px;box-shadow:0 2px 8px rgba(15,20,25,0.06)}
-        .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:12px}
-        ul{margin:0;padding-left:18px}
-        footer{text-align:center;padding:14px;color:#6b6b6b;font-size:13px}
-        a{color:#046; text-decoration:none}
-        .meta{font-size:13px;color:#536070}
+        :root{font-family:Arial,Helvetica,sans-serif;color:#222}
+        body{margin:0;background:#f5f7fb}
+        .container{max-width:900px;margin:30px auto;padding:24px;background:#fff;border-radius:8px;box-shadow:0 6px 20px rgba(18,38,63,0.08)}
+        header{display:flex;gap:20px;align-items:center}
+        .avatar{width:120px;height:120px;border-radius:8px;background:linear-gradient(135deg,#e6eefc,#cfe7ff);display:flex;align-items:center;justify-content:center;font-weight:700;color:#0b4a8b}
+        h1{margin:0;font-size:26px}
+        .subtitle{color:#3b6a9a;margin-top:4px}
+        .meta{margin-left:auto;text-align:right}
+        .section{margin-top:22px}
+        .section h2{margin:0 0 8px 0;font-size:18px;color:#123a5a}
+        p{margin:0 0 10px 0;line-height:1.45}
+        ul{margin:6px 0 0 18px}
+        .row{display:flex;gap:20px;flex-wrap:wrap}
+        .card{flex:1;min-width:240px;background:#fbfeff;padding:12px;border-radius:6px;border:1px solid #e6f0fb}
+        .contact a{color:#0b63b0;text-decoration:none}
+        footer{margin-top:20px;font-size:13px;color:#6b7a8c}
     </style>
 </head>
+
 <body>
-    <header>
-        <div class="container">
-            <h1>Dr. [David Omuse Noah Eseme], Cardiothoracic Surgeon</h1>
-            <div class="meta">Board-certified surgeon • Acute care & elective procedures • Patient-centered care</div>
-        </div>
-    </header>
-
-    <main class="container">
-        <section class="card profile" aria-labelledby="about-title">
-            <div class="avatar">Dr</div>
+    <div class="container">
+        <header>
+            <div class="avatar">Dr<br>David</div>
             <div>
-                <h2 id="about-title">About</h2>
-                <p>I am a practicing surgeon specializing in general and trauma surgery. My work focuses on acute care, minimally invasive techniques, and evidence-based perioperative management to optimize patient outcomes.</p>
-                <p>I balance emergency operative responsibilities with elective procedures, mentor trainees, and participate in quality improvement initiatives and clinical research.</p>
+                <h1>Dr. David A. — Cardiothoracic Surgeon</h1>
+                <div class="subtitle">MD, Cardiothoracic Surgery — 2 years clinical experience</div>
+                <div style="margin-top:8px;color:#375a83">Specialized in coronary artery bypass grafting (CABG), valve repair/replacement, minimally invasive thoracic procedures</div>
             </div>
+            <div class="meta">
+                <div>Location: City Hospital, Metropolis</div>
+                <div style="margin-top:6px">Email: david.surgeon@example.com</div>
+            </div>
+        </header>
+
+        <section class="section">
+            <h2>Professional Summary</h2>
+            <p>Board-certified cardiothoracic surgeon with 2 years of focused experience in adult cardiac and thoracic surgery. Proven ability to manage complex operative cases, coordinate multidisciplinary teams, and deliver patient-centered perioperative care.</p>
         </section>
 
-        <section aria-labelledby="services-title">
-            <h2 id="services-title">Clinical Services</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Emergency & Trauma Surgery</h3>
-                    <p>Management of acute abdominal catastrophes, hemorrhage control, exploratory laparotomy, and stabilization of polytrauma patients.</p>
-                </div>
-                <div class="card">
-                    <h3>Minimally Invasive Surgery</h3>
-                    <p>Laparoscopic cholecystectomy, appendectomy, hernia repair, and diagnostic laparoscopy with focus on rapid recovery.</p>
-                </div>
-                <div class="card">
-                    <h3>Elective General Surgery</h3>
-                    <p>Hernia repairs, bowel resections, breast surgery consults, and benign gastrointestinal procedures with individualized care plans.</p>
-                </div>
-            </div>
-        </section>
-
-        <section aria-labelledby="skills-title">
-            <h2 id="skills-title">Skills & Expertise</h2>
-            <div class="grid">
-                <div class="card">
-                    <h4>Technical Skills</h4>
-                    <ul>
-                        <li>Advanced laparoscopic techniques</li>
-                        <li>Damage-control surgery</li>
-                        <li>Vascular control and hemostasis</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h4>Clinical & Perioperative</h4>
-                    <ul>
-                        <li>Critical care decision-making</li>
-                        <li>ERCP and multidisciplinary coordination</li>
-                        <li>Enhanced recovery after surgery (ERAS)</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" aria-labelledby="contact-title">
-            <h2 id="contact-title">Contact & Appointments</h2>
+        <section class="section row">
             <div class="card">
-                <p>Email: <a href="mailto:your.email@hospital.org">your.email@hospital.org</a></p>
-                <p>Clinic: General Surgery Outpatient Unit — Mon/Wed/Fri (by appointment)</p>
-                <p>For urgent referrals, contact the hospital switchboard or on-call surgical team.</p>
+                <h2>Key Skills</h2>
+                <ul>
+                    <li>Coronary artery bypass grafting (on-pump & off-pump)</li>
+                    <li>Valve repair and replacement (aortic, mitral)</li>
+                    <li>Minimally invasive thoracoscopic procedures</li>
+                    <li>Perioperative critical care & ventilator management</li>
+                    <li>Advanced cardiac life support (ACLS)</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Clinical Experience</h2>
+                <p><strong>Cardiothoracic Surgeon — City Hospital</strong><br>2024 — Present (2 years)</p>
+                <ul>
+                    <li>Performed >150 cardiac surgeries including CABG and valve procedures.</li>
+                    <li>Led perioperative management for high-risk cardiac patients.</li>
+                    <li>Collaborated with cardiology, anesthesia, and ICU teams to optimize outcomes.</li>
+                </ul>
             </div>
         </section>
-    </main>
 
-    <footer>
-        <div class="container">© 2026 Dr. [Your Name] — Surgeon • Confidential patient care</div>
-    </footer>
+        <section class="section">
+            <h2>Education & Training</h2>
+            <ul>
+                <li>Residency in Cardiothoracic Surgery — University Medical Center</li>
+                <li>Doctor of Medicine (MD) — National Medical School</li>
+                <li>Fellowship rotations: Adult Cardiac Surgery, Thoracic Oncology</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Selected Achievements</h2>
+            <ul>
+                <li>Successfully reduced post-op infection rate in cardiac ward through protocol improvements.</li>
+                <li>Presented case series on minimally invasive valve repair at regional surgical conference.</li>
+            </ul>
+        </section>
+
+        <section class="section contact">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:david.surgeon@example.com">david.surgeon@example.com</a></p>
+            <p>Phone: +1 (555) 123-4567</p>
+            <p>LinkedIn: <a href="#">linkedin.com/in/dr-david</a></p>
+        </section>
+
+        <footer>
+            Last updated: 2026 — Portfolio summary for professional use only.
+        </footer>
+    </div>
 </body>
 </html>
