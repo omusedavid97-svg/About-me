@@ -1,51 +1,148 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My Favourite Animals</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: #f4f4f9;
-            color: #333;
             margin: 0;
-            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #333;
         }
-        .animal {
+        header {
+            background: #283593;
+            color: #fff;
+            padding: 32px 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0 0 8px;
+            font-size: 2.4rem;
+        }
+        header p {
+            margin: 0;
+            font-size: 1rem;
+            opacity: 0.85;
+        }
+        .container {
+            max-width: 980px;
+            margin: 24px auto;
+            padding: 0 20px 40px;
+        }
+        .section {
             background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 16px;
-            margin-bottom: 16px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            padding: 24px;
+            margin-bottom: 24px;
         }
-        .animal h2 {
+        .section h2 {
             margin-top: 0;
+            color: #1a237e;
+        }
+        .profile {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        .profile img {
+            width: 100%;
+            border-radius: 12px;
+            object-fit: cover;
+            min-height: 240px;
+        }
+        .project-list,
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .project-list li,
+        .skills-list li {
+            margin-bottom: 14px;
+            line-height: 1.6;
+        }
+        .project-list li strong {
+            display: block;
+            margin-bottom: 4px;
+            color: #0d47a1;
+        }
+        .contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .contact a {
+            text-decoration: none;
+            color: #fff;
+            background: #3949ab;
+            padding: 12px 20px;
+            border-radius: 8px;
+            transition: background 0.2s ease;
+        }
+        .contact a:hover {
+            background: #1a237e;
+        }
+        @media (max-width: 720px) {
+            .profile {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <header class="animal">
-        <h1>About Me</h1>
-        <p>I am a cardiothoracic surgeon with a passion for helping patients heal. I plan and perform complex surgeries on the heart, lungs, and chest, collaborating closely with a multidisciplinary team to ensure each patient receives the best possible care. I work with precision and care to treat heart and chest conditions, and I value empathy, teamwork, and lifelong learning in my career.</p>
-        <p>At the hospital, I am actively involved in patient rounds, pre-operative consultations, and post-operative follow-up. I make time to listen to each patient’s concerns, explain treatment options clearly, and provide reassurance so they feel supported during every step of their care. My patients know me as friendly, approachable, and dedicated to their wellbeing.</p>
-        <p>I also take pride in teaching medical students and residents, helping them learn surgical techniques, clinical decision-making, and compassionate patient care. I enjoy mentoring young doctors, answering their questions, and guiding them through real cases so they grow into confident, skilled physicians.</p>
-        <p>Outside of medicine, I enjoy spending time with my favorite animals and sharing stories about them in this portfolio.</p>
-        <div class="contact">
-            <h2>Contact Information</h2>
-            <p>Email: example@example.com</p>
-            <p>Mobile: +123-456-7890</p>
-            <p>Location: City, Country</p>
-            <p>LinkedIn: linkedin.com/in/example</p>
-        </div>
+    <header>
+        <h1>My Portfolio</h1>
+        <p>Creative developer building clean, responsive, and engaging web experiences.</p>
     </header>
-    <section class="animal">
-        <h2>Favourite Cat</h2>
-        <p>My favourite animal is a cat that is white and furry. It is soft, playful, and graceful, moving with quiet confidence around the house. The white fur makes the cat look elegant and friendly, and it loves curling up in warm sunlight or chasing a toy mouse. Its gentle purrs and bright eyes make it feel like a calm and comforting companion.</p>
-    </section>
-    <section class="animal">
-        <h2>Favourite Dog</h2>
-        <p>I also love a dog that is very cute. The dog is cheerful, loyal, and full of energy, always ready for a walk or a fun game in the yard. It has a sweet face and a happy personality, with a wagging tail and eager eyes that show it cares about everyone around. The dog enjoys playing fetch, cuddling after a long day, and protecting the family with gentle attention.</p>
-    </section>
+    <main class="container">
+        <section class="section">
+            <h2>About Me</h2>
+            <div class="profile">
+                <div>
+                    <p>Hello! I'm a web developer focused on building user-friendly websites and applications. I enjoy turning ideas into polished digital products using HTML, CSS, and JavaScript.</p>
+                    <p>My work is based on clarity, performance, and accessibility. I love collaborating on projects that solve real problems and help people connect with technology.</p>
+                </div>
+                <img src="https://via.placeholder.com/480x320.png?text=Portfolio+Image" alt="Portfolio image">
+            </div>
+        </section>
+        <section class="section">
+            <h2>Projects</h2>
+            <ul class="project-list">
+                <li>
+                    <strong>Responsive Landing Page</strong>
+                    Designed and built a landing page with a clean layout, mobile-first design, and optimized performance.
+                </li>
+                <li>
+                    <strong>Interactive Dashboard</strong>
+                    Developed a dashboard interface with interactive charts, filters, and responsive components.
+                </li>
+                <li>
+                    <strong>Portfolio Website</strong>
+                    Created a personal portfolio site showcasing projects, skills, and contact information.
+                </li>
+            </ul>
+        </section>
+        <section class="section">
+            <h2>Skills</h2>
+            <ul class="skills-list">
+                <li>HTML5 & CSS3</li>
+                <li>JavaScript / ES6+</li>
+                <li>Responsive design</li>
+                <li>Web performance</li>
+                <li>UI design and accessibility</li>
+            </ul>
+        </section>
+        <section class="section">
+            <h2>Contact</h2>
+            <div class="contact">
+                <a href="mailto:hello@example.com">Email Me</a>
+                <a href="#">View GitHub</a>
+                <a href="#">Download Resume</a>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
