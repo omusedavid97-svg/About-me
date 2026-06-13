@@ -1,143 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DR. DAVID</title>
+    <title>My Favourite Animals</title>
     <style>
-        :root{font-family:Arial,Helvetica,sans-serif;color:#222}
-        body{margin:0;background:#f5f7fb}
-        .container{max-width:900px;margin:30px auto;padding:24px;background:#fff;border-radius:8px;box-shadow:0 6px 20px rgba(18,38,63,0.08)}
-        header{display:flex;gap:20px;align-items:center}
-        .logo-section{display:flex;gap:15px;align-items:center}
-        .logo{width:100px;height:100px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:50px}
-        .avatar{width:120px;height:120px;border-radius:8px;background:linear-gradient(135deg,#e6eefc,#cfe7ff);display:flex;align-items:center;justify-content:center;font-weight:700;color:#0b4a8b}
-        h1{margin:0;font-size:26px}
-        .subtitle{color:#3b6a9a;margin-top:4px}
-        .meta{margin-left:auto;text-align:right}
-        .section{margin-top:22px}
-        .section h2{margin:0 0 8px 0;font-size:18px;color:#123a5a}
-        p{margin:0 0 10px 0;line-height:1.45}
-        ul{margin:6px 0 0 18px}
-        .row{display:flex;gap:20px;flex-wrap:wrap}
-        .card{flex:1;min-width:240px;background:#fbfeff;padding:12px;border-radius:6px;border:1px solid #e6f0fb}
-        .contact a{color:#0b63b0;text-decoration:none}
-        .cardiac-features{display:flex;gap:15px;margin-top:15px;flex-wrap:wrap}
-        .feature-img{width:80px;height:80px;background:#f0f4f8;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:40px;border:1px solid #d4e4f0}
-        .hero{padding:20px;border-radius:10px;margin-bottom:22px;background:linear-gradient(135deg,#3b82f6,#8b5cf6,#ec4899);color:#fff;display:flex;align-items:center;gap:18px;box-shadow:0 12px 30px rgba(59,130,246,0.18)}
-        .hero .symbol{width:90px;height:90px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.18);border-radius:50%;box-shadow:0 10px 18px rgba(0,0,0,0.15)}
-        .heart-beat{width:80px;height:80px;display:flex;align-items:center;justify-content:center}
-        /* lifelike red heart */
-        .heart-shape{width:40px;height:40px;position:relative;transform:rotate(-45deg);animation:pump 1s ease-in-out infinite;filter:drop-shadow(0 6px 8px rgba(0,0,0,0.18))}
-        .heart-shape::before,.heart-shape::after{content:"";width:40px;height:40px;border-radius:50%;position:absolute;top:0;left:0;/* red gradient */background:radial-gradient(circle at 30% 30%, #fff3f3 0%, rgba(255,255,255,0.6) 6%, rgba(255,77,79,0.95) 40%, #e60026 100%)}
-        .heart-shape::before{left:20px}
-        .heart-shape::after{top:-20px}
-        @keyframes pump{0%,100%{transform:rotate(-45deg) scale(1)}50%{transform:rotate(-45deg) scale(1.2)}}
-        .hero h2{margin:0;font-size:22px;line-height:1.2}
-        .hero p{margin:6px 0 0;font-size:14px;color:rgba(255,255,255,0.95)}
-        footer{margin-top:20px;font-size:13px;color:#6b7a8c}
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .animal {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .animal h2 {
+            margin-top: 0;
+        }
     </style>
 </head>
-
 <body>
-    <div class="container">
-        <section class="hero">
-            <div class="symbol" aria-hidden="true">
-                <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="gradA" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#fbbf24"/>
-                            <stop offset="100%" stop-color="#ec4899"/>
-                        </linearGradient>
-                        <linearGradient id="gradB" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#34d399"/>
-                            <stop offset="100%" stop-color="#3b82f6"/>
-                        </linearGradient>
-                    </defs>
-                    <rect x="46" y="15" width="28" height="90" rx="10" fill="url(#gradA)"/>
-                    <rect x="15" y="46" width="90" height="28" rx="10" fill="url(#gradA)"/>
-                    <path d="M60 20c10 18 10 36 0 54c-10 18-10 36 0 54" fill="none" stroke="url(#gradB)" stroke-width="8" stroke-linecap="round"/>
-                    <path d="M55 20c-10 18-10 36 0 54c10 18 10 36 0 54" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
-                    <circle cx="60" cy="20" r="5" fill="#fff"/>
-                    <circle cx="60" cy="100" r="5" fill="#fff"/>
-                </svg>
-            </div>
-            <div class="heart-beat" aria-hidden="true">
-                <div class="heart-shape"></div>
-            </div>
-            <div>
-                <h2>Guardian of Hearts & Lungs</h2>
-                <p>Vibrant emblem with a twining snake around a cross, symbolizing healing, precision, and surgical mastery.</p>
-            </div>
-        </section>
-        <header>
-            <div class="avatar">Dr<br>David</div>
-            <div>
-                <h1>Dr. David A. — Cardiothoracic Surgeon</h1>
-                <div class="subtitle">MD, Cardiothoracic Surgery — 2 years clinical experience</div>
-                <div style="margin-top:8px;color:#375a83">Specialized in coronary artery bypass grafting (CABG), valve repair/replacement, minimally invasive thoracic procedures</div>
-            </div>
-            <div class="meta">
-                <div>Location: City Hospital, Metropolis</div>
-                <div style="margin-top:6px">Email: david.surgeon@example.com</div>
-            </div>
-        </header>
-
-        <section class="section">
-            <h2>Professional Summary</h2>
-            <p>Board-certified cardiothoracic surgeon with 2 years of focused experience in adult cardiac and thoracic surgery. Proven ability to manage complex operative cases, coordinate multidisciplinary teams, and deliver patient-centered perioperative care.</p>
-        </section>
-
-        <section class="section row">
-            <div class="card">
-                <h2>Key Skills</h2>
-                <ul>
-                    <li>Coronary artery bypass grafting (on-pump & off-pump)</li>
-                    <li>Valve repair and replacement (aortic, mitral)</li>
-                    <li>Minimally invasive thoracoscopic procedures</li>
-                    <li>Perioperative critical care & ventilator management</li>
-                    <li>Advanced cardiac life support (ACLS)</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h2>Clinical Experience</h2>
-                <p><strong>Cardiothoracic Surgeon — City Hospital</strong><br>2024 — Present (2 years)</p>
-                <ul>
-                    <li>Performed >150 cardiac surgeries including CABG and valve procedures.</li>
-                    <li>Led perioperative management for high-risk cardiac patients.</li>
-                    <li>Collaborated with cardiology, anesthesia, and ICU teams to optimize outcomes.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>Education & Training</h2>
-            <ul>
-                <li>Residency in Cardiothoracic Surgery — University Medical Center</li>
-                <li>Doctor of Medicine (MD) — National Medical School</li>
-                <li>Fellowship rotations: Adult Cardiac Surgery, Thoracic Oncology</li>
-            </ul>
-        </section>
-
-        <section class="section">
-            <h2>Selected Achievements</h2>
-            <ul>
-                <li>Successfully reduced post-op infection rate in cardiac ward through protocol improvements.</li>
-                <li>Presented case series on minimally invasive valve repair at regional surgical conference.</li>
-            </ul>
-        </section>
-
-        <section class="section contact">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:david.surgeon@example.com">david.surgeon@example.com</a></p>
-            <p>Phone: +1 (555) 123-4567</p>
-            <p>LinkedIn: <a href="#">linkedin.com/in/dr-david</a></p>
-        </section>
-
-        <footer>
-            Last updated: 2026 — Portfolio summary for professional use only.
-        </footer>
+    <div class="animal">
+        <h2>My Favourite Cat</h2>
+        <p>My favourite animal is a cat that is white and furry. It is soft, playful, and graceful. The white fur makes the cat look elegant and friendly.</p>
+    </div>
+    <div class="animal">
+        <h2>My Favourite Dog</h2>
+        <p>I also love a dog that is very cute. The dog is cheerful, loyal, and full of energy. It has a sweet face and a happy personality.</p>
     </div>
 </body>
 </html>
