@@ -1,149 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Engineering Portfolio</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #b4048d;
-            color: #333;S
-        }
-        header {
-            background: #283593;
-            color: ::-webkit-validation-bubble;
-            padding: 32px 20px;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0 0 8px;
-            font-size: 2.4rem;
-        }
-        header p {
-            margin: 0;
-            font-size: 1rem;
-            opacity: 0.85;
-        }
-        .container {
-            max-width: 980px;
-            margin: 24px auto;
-            padding: 0 30px 40px;
-        }
-        .section {
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            padding: 24px;
-            margin-bottom: 24px;
-        }
-        .section h2 {
-            margin-top: 0;
-            color: #1a237e;
-        }
-        .profile {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-        }
-        .profile img {
-            width: 100%;
-            border-radius: 12px;
-            object-fit: cover;
-            min-height: 240px;
-        }
-        .project-list,
-        .skills-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .project-list li,
-        .skills-list li {
-            margin-bottom: 14px;
-            line-height: 1.6;
-        }
-        .project-list li strong {
-            display: block;
-            margin-bottom: 4px;
-            color: #bc037e;
-        }
-        .contact {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-        .contact a {
-            text-decoration: none;
-            color: #04bb7b;
-            background: #3949ab;
-            padding: 12px 20px;
-            border-radius: 18px;
-            transition: background 0.2s ease;
-        }
-        .contact a:hover {
-            background: #f44336 ;
-        }
-        @media (max-width: 720px) {
-            .profile {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Mechatronics & Aerospace Engineer</h1>
-        <p>Driven engineer building smart automation systems and efficient aerospace propulsion solutions.</p>
-    </header>
-    <main class="container">
-        <section class="section">
-            <h2>About Me</h2>
-            <div class="profile">
-                <div>
-                    <p>As a mechatronics engineer with experience in robotics, control systems, and embedded electronics, I design and integrate automated solutions for complex mechanical systems. I specialize in combining mechanical design, electrical systems, and software to create intelligent, efficient machines that solve real-world problems.</p>
-                    <p>My background in aerospace engineering complements my work with propulsion analysis, structural design, and systems integration for aircraft and UAV projects. I have hands-on experience with turbine design, aerodynamic analysis, and flight control systems.</p>
-                    <p>Throughout my career, I've worked on multidisciplinary projects that require deep technical knowledge across mechanical, electrical, and control domains. I'm passionate about optimization, whether it's improving system efficiency, reducing weight, or enhancing autonomous capabilities. My toolkit includes CAD design, MATLAB simulations, embedded programming, and rapid prototyping.</p>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Simple Portfolio</title>
+        <style>
+            :root{--accent:#2563eb;--bg:#0f172a;--card:#0b1220;--muted:#94a3b8;color-scheme:dark}
+            *{box-sizing:border-box}
+            body{margin:0;font-family:Inter,Segoe UI,Roboto,system-ui,Arial;background:linear-gradient(180deg,#071126 0%, #071827 100%);color:#e6eef8;line-height:1.5}
+            .container{max-width:900px;margin:32px auto;padding:24px}
+            header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+            .brand{display:flex;align-items:center;gap:12px}
+            .logo{width:48px;height:48px;border-radius:8px;background:var(--accent);display:inline-grid;place-items:center;font-weight:700}
+            nav a{color:var(--muted);text-decoration:none;margin-left:14px;font-weight:600}
+            .hero{display:grid;grid-template-columns:1fr;gap:18px;align-items:center;padding:22px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:12px}
+            .hero h1{margin:0;font-size:28px}
+            .hero p{margin:0;color:var(--muted)}
+            .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:18px}
+            .card{background:rgba(255,255,255,0.03);padding:16px;border-radius:10px}
+            .card h3{margin:0 0 8px 0}
+            .projects .project{padding:12px;border-radius:8px;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);margin-bottom:12px}
+            .skills{display:flex;flex-wrap:wrap;gap:8px}
+            .skill{background:rgba(255,255,255,0.04);padding:6px 10px;border-radius:999px;color:var(--muted);font-weight:600}
+            footer{margin-top:28px;text-align:center;color:var(--muted);font-size:14px}
+            .contact a{display:inline-block;margin-right:12px;color:var(--accent);text-decoration:none}
+            @media(max-width:700px){.grid{grid-template-columns:1fr}.brand .hide-sm{display:none}}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <div class="brand">
+                    <div class="logo">AB</div>
+                    <div>
+                        <div style="font-weight:700">Alex Brown</div>
+                        <div style="font-size:12px;color:var(--muted)">Frontend developer</div>
+                    </div>
                 </div>
-                <img src="https://via.placeholder.com/480x320.png?text=Engineering+Portfolio" alt="Engineering portfolio image">
-            </div>
-        </section>
-        <section class="section">
-            <h2>Projects</h2>
-            <ul class="project-list">
-                <li>
-                    <strong>Autonomous Inspection Robot</strong>
-                    Designed a mobile mechatronic platform with sensor fusion, motion control, and remote monitoring for industrial inspections.
-                </li>
-                <li>
-                    <strong>UAV Propulsion System</strong>
-                    Developed and tested a lightweight propulsion concept including turbine analysis, fuel delivery, and thermal management.
-                </li>
-                <li>
-                    <strong>Control System Integration</strong>
-                    Implemented embedded control algorithms for actuator coordination, feedback control, and system diagnostics.
-                </li>
-            </ul>
-        </section>
-        <section class="section">
-            <h2>Skills</h2>
-            <ul class="skills-list">
-                <li>Mechatronics system design</li>
-                <li>Aerospace propulsion and structures</li>
-                <li>Control systems and embedded software</li>
-                <li>CAD / SolidWorks / MATLAB</li>
-                <li>Sensor integration and automation</li>
-            </ul>
-        </section>
-        <section class="section">
-            <h2>Contact</h2>
-            <div class="contact">
-                <a href="mailto:hello@example.com">Email Me</a>
-                <a href="#">View LinkedIn</a>
-                <a href="#">Download Resume</a>
-            </div>
-        </section>
-    </main>
-</body>
+                <nav>
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </header>
+
+            <section class="hero">
+                <div>
+                    <h1>Hi, I'm Alex — I build clean, accessible websites.</h1>
+                    <p>I focus on frontend development, UI/UX and performance. Here are a few projects and ways to reach me.</p>
+                </div>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Role</h3>
+                        <p class="muted">Frontend Developer · UI-focused · React, HTML, CSS</p>
+                    </div>
+                    <div class="card">
+                        <h3>Location</h3>
+                        <p class="muted">Remote · Based in City, Country</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about" style="margin-top:20px">
+                <div class="card">
+                    <h3>About me</h3>
+                    <p>I craft responsive, accessible interfaces with attention to performance and user experience. I enjoy turning designs into polished products.</p>
+                    <div style="margin-top:12px">
+                        <strong>Skills</strong>
+                        <div class="skills" style="margin-top:8px">
+                            <span class="skill">HTML</span>
+                            <span class="skill">CSS</span>
+                            <span class="skill">JavaScript</span>
+                            <span class="skill">React</span>
+                            <span class="skill">Accessibility</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" class="projects" style="margin-top:18px">
+                <h3 style="margin-bottom:8px">Selected projects</h3>
+                <div class="project card">
+                    <h4 style="margin:0">Portfolio Website</h4>
+                    <p class="muted">A fast, responsive portfolio built with HTML, CSS and minimal JS.</p>
+                </div>
+                <div class="project card">
+                    <h4 style="margin:0">Dashboard UI</h4>
+                    <p class="muted">Interactive dashboard with charts and real-time updates.</p>
+                </div>
+            </section>
+
+            <section id="contact" style="margin-top:18px">
+                <div class="card contact">
+                    <h3>Contact</h3>
+                    <p class="muted">Interested in working together? Reach out:</p>
+                    <div style="margin-top:8px">
+                        <a href="mailto:alex@example.com">alex@example.com</a>
+                        <a href="#" style="margin-left:8px">LinkedIn</a>
+                    </div>
+                </div>
+            </section>
+
+            <footer>
+                © 2026 Alex Brown — Built with HTML & CSS
+            </footer>
+        </div>
+    </body>
 </html>
