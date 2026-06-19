@@ -1,109 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Simple Portfolio</title>
-        <style>
-            :root{--accent:#f40c0c;--bg:#82d213;--card:#15fd0d;--muted:#f8b808;color-scheme:dark}
-            *{box-sizing:border-box}
-            body{margin:0;font-family:Inter,Segoe UI,Roboto,system-ui,Arial;background:linear-gradient(180deg,#c3f707 0%, #071827 100%);color:#e6eef8;line-height:1.5}
-            .container{max-width:900px;margin:32px auto;padding:24px}
-            header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
-            .brand{display:flex;align-items:center;gap:12px}
-            .logo{width:48px;height:48px;border-radius:8px;background:var(--accent);display:inline-grid;place-items:center;font-weight:700}
-            nav a{color:var(--muted);text-decoration:none;margin-left:14px;font-weight:600}
-            .hero{display:grid;grid-template-columns:1fr;gap:18px;align-items:center;padding:30px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:12px}
-            .hero h1{margin:0;font-size:38px}
-            .hero p{margin:0;color:var(--muted)}
-            .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
-            .card{background:rgba(5, 5, 247, 0.97);padding:16px;border-radius:10px}
-            .card h3{margin:0 0 8px 0}
-            .projects .project{padding:12px;border-radius:8px;background:linear-gradient(180deg,rgba(231, 6, 248, 0.934),transparent);margin-bottom:12px}
-            .skills{display:flex;flex-wrap:wrap;gap:8px}
-            .skill{background:rgba(192, 5, 5, 0.966);padding:6px 10px;border-radius:999px;color:var(--muted);font-weight:600}
-            footer{margin-top:28px;text-align:center;color:var(--muted);font-size:14px}
-            .contact a{display:inline-block;margin-right:12px;color:var(--accent);text-decoration:none}
-            @media(max-width:700px){.grid{grid-template-columns:1fr}.brand .hide-sm{display:none}}
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <header>
-                <div class="brand">
-                    <div class="logo">DE</div>
-                    <div>
-                        <div style="font-weight:700">David Eseme</div>
-                        <div style="font-size:12px;color:var(--muted)">Frontend developer</div>
-                    </div>
-                </div>
-                <nav>
-                    <a href="#about">About</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a>
-                </nav>
-            </header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineer Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f4f4f4;
+        }
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        nav {
+            background: #333;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #667eea;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        section {
+            background: white;
+            margin: 20px 0;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        .project, .skill-category {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .project h3, .skill-category h3 {
+            color: #764ba2;
+            margin-bottom: 10px;
+        }
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+        }
+        .skill {
+            background: #667eea;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>John Smith</h1>
+        <p>Software & Electrical Engineer</p>
+    </header>
 
-            <section class="hero">
-                <div>
-                    <h1>Hi, I'm David — I build clean, accessible websites.</h1>
-                    <p>I focus on frontend development, UI/UX and performance. Here are a few projects and ways to reach me.</p>
-                </div>
-                <div class="grid">
-                    <div class="card">
-                        <h3>Role</h3>
-                        <p class="muted">Frontend Developer · UI-focused · React, HTML, CSS</p>
-                    </div>
-                    <div class="card">
-                        <h3>Location</h3>
-                        <p class="muted">Remote · Based in City, Country</p>
-                    </div>
-                </div>
-            </section>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-            <section id="about" style="margin-top:20px">
-                <div class="card">
-                    <h3>About me</h3>
-                    <p>I craft responsive, accessible interfaces with attention to performance and user experience. I enjoy turning designs into polished products.</p>
-                    <div style="margin-top:12px">
-                        <strong>Skills</strong>
-                        <div class="skills" style="margin-top:8px">
-                            <span class="skill">HTML</span>
-                            <span class="skill">CSS</span>
-                            <span class="skill">JavaScript</span>
-                            <span class="skill">React</span>
-                            <span class="skill">Accessibility</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
+    <div class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am a passionate engineer with expertise in software development and electrical systems. With 5+ years of experience, I design and develop innovative solutions to complex technical problems. I'm committed to continuous learning and delivering high-quality work.</p>
+        </section>
 
-            <section id="projects" class="projects" style="margin-top:18px">
-                <h3 style="margin-bottom:8px">Selected projects</h3>
-                <div class="project card">
-                    <h4 style="margin:0">Portfolio Website</h4>
-                    <p class="muted">A fast, responsive portfolio built with HTML, CSS and minimal JS.</p>
-                </div>
-                <div class="project card">
-                    <h4 style="margin:0">Dashboard UI</h4>
-                    <p class="muted">Interactive dashboard with charts and real-time updates.</p>
-                </div>
-            </section>
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            <div class="project">
+                <h3>IoT Smart Home System</h3>
+                <p>Developed a smart home automation system using Arduino and Python. Integrated various sensors for temperature, humidity, and motion detection with cloud connectivity for remote monitoring.</p>
+            </div>
+            <div class="project">
+                <h3>Mobile App Development</h3>
+                <p>Created a cross-platform mobile application for inventory management using React Native, improving efficiency by 40% for logistics companies.</p>
+            </div>
+            <div class="project">
+                <h3>Power Management Circuit Design</h3>
+                <p>Designed and implemented efficient power management circuits for battery-powered embedded systems, extending battery life by 35%.</p>
+            </div>
+        </section>
 
-            <section id="contact" style="margin-top:18px">
-                <div class="card contact">
-                    <h3>Contact</h3>
-                    <p class="muted">Interested in working together? Reach out:</p>
-                    <div style="margin-top:8px">
-                        <a href="mailto:alex@example.com">david@example.com</a>
-                        <a href="#" style="margin-left:8px">LinkedIn</a>
-                    </div>
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skill-category">
+                <h3>Programming Languages</h3>
+                <div class="skills">
+                    <div class="skill">Python</div>
+                    <div class="skill">C++</div>
+                    <div class="skill">JavaScript</div>
+                    <div class="skill">Java</div>
                 </div>
-            </section>
+            </div>
+            <div class="skill-category">
+                <h3>Technologies & Tools</h3>
+                <div class="skills">
+                    <div class="skill">Arduino</div>
+                    <div class="skill">CAD Design</div>
+                    <div class="skill">React</div>
+                    <div class="skill">SQL</div>
+                    <div class="skill">Git</div>
+                    <div class="skill">MATLAB</div>
+                </div>
+            </div>
+        </section>
 
-            <footer>
-                © 2026 David Eseme — Built with HTML & CSS
-            </footer>
-        </div>
-    </body>
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>Email: <a href="mailto:john@example.com">john@example.com</a></p>
+            <p>Phone: +1 (555) 123-4567</p>
+            <p>LinkedIn: <a href="#">linkedin.com/in/johnsmith</a></p>
+            <p>GitHub: <a href="#">github.com/johnsmith</a></p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 John Smith. All rights reserved.</p>
+    </footer>
+</body>
 </html>
