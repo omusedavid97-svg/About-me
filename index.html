@@ -4,118 +4,118 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head><!DOCTYPE html>
+<html>
+<head>
+    <title>Deposit Form</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #121620;
-            color: #2e0303;
-        }
-        header {
-            background: #2d3e50;
-            color: white;
-            padding: 30px 50px;
             text-align: center;
+            margin-top: 50px;
         }
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            padding: 15px 0;
-            background: #384c66;
+
+        #formSection {
+            display: none;
+            margin-top: 20px;
         }
-        nav a {
-            color: rgba(136, 5, 5, 0.119);
-            text-decoration: none;
+
+        input, select {
+            padding: 10px;
+            margin: 8px;
+            width: 250px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
             font-weight: bold;
-        }
-        main {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-        section {
-            background: rgb(5, 39, 229);
-            padding: 25px;
-            margin-bottom: 25px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-        }
-        h2 {
-            margin-top: 0;
-        }
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
-        }
-        .project-card {
-            border: 1px solid #37ab6f;
-            padding: 15px;
-            border-radius: 8px;
-            background: #082392;
-        }
-        footer {
-            text-align: center;
-            padding: 15px 0;
-            background: #2d3e50;
-            color: white;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>My Portfolio</h1>
-        <p>Web developer creating clean, modern experiences</p>
-    </header>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Hi, I'm a web developer with a passion for building responsive, user-friendly websites. I enjoy turning ideas into digital products that look great and perform well on any device.</p>
-            <p>My focus is on front-end development, clean design, and delivering efficient solutions that help clients and users achieve their goals.</p>
-        </section>
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="projects">
-                <div class="project-card">
-                    <h3>Portfolio Website</h3>
-                    <p>A responsive personal portfolio showcasing my work and skills, built with HTML, CSS, and JavaScript.</p>
-                </div>
-                <div class="project-card">
-                    <h3>Task Manager App</h3>
-                    <p>A task management application with project boards, task tracking, and priority labels.</p>
-                </div>
-                <div class="project-card">
-                    <h3>Landing Page Design</h3>
-                    <p>A marketing landing page with a clean layout, strong call-to-action, and mobile-friendly structure.</p>
-                </div>
-            </div>
-        </section>
-        <section id="skills">
-            <h2>Skills</h2>
-            <ul>
-                <li>HTML & CSS</li>
-                <li>JavaScript</li>
-                <li>Responsive design</li>
-                <li>UI/UX fundamentals</li>
-                <li>Version control with Git</li>
-            </ul>
-        </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>If you'd like to work together or learn more about my work, feel free to reach out.</p>
-            <p>Email: <a href="mailto:hello@example.com">hello@example.com</a></p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2026 My Portfolio. All rights reserved.</p>
-    </footer>
+
+    <h1>Welcome</h1>
+    <p>Do you accept the terms and conditions?</p>
+
+    <button onclick="acceptTerms()">Yes</button>
+    <button onclick="declineTerms()">No</button>
+
+    <div id="formSection">
+        <h2>Deposit Information</h2>
+
+        <select id="gender">
+            <option value="">Select Gender</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+        </select>
+        <br>
+
+        <input type="text" id="idNumber" placeholder="Enter ID Number">
+        <br>
+
+        <input type="password"
+               id="passcode"
+               maxlength="4"
+               pattern="[0-9]{4}"
+               placeholder="Enter 4-Digit Passcode">
+        <br>
+
+        <input type="number" id="amount" placeholder="Deposit Amount">
+        <br>
+
+        <button onclick="submitForm()">Submit</button>
+
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function acceptTerms() {
+            document.getElementById("formSection").style.display = "block";
+        }
+
+        function declineTerms() {
+            alert("You must accept the terms to continue.");
+        }
+
+        function submitForm() {
+            let gender = document.getElementById("gender").value;
+            let idNumber = document.getElementById("idNumber").value;
+            let passcode = document.getElementById("passcode").value;
+            let amount = document.getElementById("amount").value;
+
+            if (!gender) {
+                alert("Please select your gender.");
+                return;
+            }
+
+            if (!idNumber) {
+                alert("Please enter your ID number.");
+                return;
+            }
+
+            if (!/^[0-9]{4}$/.test(passcode)) {
+                alert("Passcode must be exactly 4 digits.");
+                return;
+            }
+
+            if (amount <= 0) {
+                alert("Please enter a valid deposit amount.");
+                return;
+            }
+
+            document.getElementById("result").innerHTML =
+                "Details submitted successfully! Deposit amount: $" + amount;
+        }
+    </script>
+
 </body>
 </html>
+
