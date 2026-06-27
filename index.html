@@ -81,45 +81,129 @@
             overflow: hidden;
             z-index: 1;
             pointer-events: none;
+            perspective: 1200px;
         }
+        .cityscape {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .cityscape::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 30% 20%, rgba(255,255,255,0.18), transparent 35%),
+                radial-gradient(circle at 70% 15%, rgba(255,255,255,0.12), transparent 28%);
+            opacity: 0.6;
+        }
+        .building {
+            position: absolute;
+            bottom: 0;
+            width: 80px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 14px 14px 0 0;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+            opacity: 0.9;
+        }
+        .building.b1 { left: 8%; height: 220px; }
+        .building.b2 { left: 22%; height: 180px; width: 64px; }
+        .building.b3 { left: 38%; height: 250px; width: 96px; }
+        .building.b4 { left: 54%; height: 200px; width: 72px; }
+        .building.b5 { left: 70%; height: 240px; width: 84px; }
+        .building.b6 { left: 84%; height: 190px; width: 60px; }
+        .building::after {
+            content:'';
+            position:absolute;
+            inset:14px auto 14px 14px;
+            width: calc(100% - 28px);
+            height: calc(100% - 28px);
+            background: radial-gradient(circle at top, rgba(255,255,255,0.2), transparent 20%);
+            opacity:0.35;
+        }
+        .crowd {
+            position: absolute;
+            bottom: 16%;
+            left: 0;
+            width: 100%;
+            height: 22%;
+            z-index: 1;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10%;
+            opacity: 0.8;
+        }
+        .crowd-person {
+            width: 18px;
+            height: 38px;
+            background: rgba(255,255,255,0.88);
+            border-radius: 12px 12px 8px 8px;
+            position: relative;
+            transform: translateZ(-80px) scale(0.85);
+            animation: crowdMove 1.6s ease-in-out infinite alternate;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .crowd-person::before {
+            content:'';
+            position:absolute;
+            top:-8px;
+            left:50%;
+            width:12px;
+            height:12px;
+            border-radius:50%;
+            background: rgba(255,255,255,0.94);
+            transform: translateX(-50%);
+        }
+        .crowd-person:nth-child(2) { height: 44px; animation-delay: 0.2s; }
+        .crowd-person:nth-child(3) { height: 34px; animation-delay: 0.4s; }
+        .crowd-person:nth-child(4) { height: 40px; animation-delay: 0.1s; }
+        .crowd-person:nth-child(5) { height: 36px; animation-delay: 0.3s; }
+        .crowd-person:nth-child(6) { height: 42px; animation-delay: 0.5s; }
         .person {
             position: absolute;
-            left: -140px;
+            left: -160px;
             bottom: 18%;
             width: 120px;
             height: 160px;
             animation: walkFade 4.8s ease-out forwards;
             z-index: 2;
+            transform-style: preserve-3d;
+            transform: translateZ(0);
         }
         .person .head {
-            width: 24px;
-            height: 24px;
-            background: rgba(255, 255, 255, 0.94);
+            width: 28px;
+            height: 28px;
+            background: radial-gradient(circle at 30% 30%, #ffffff, #f5f5f5 70%);
             border-radius: 50%;
             position: absolute;
             top: 0;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translateX(-50%) translateZ(12px);
+            box-shadow: 0 3px 6px rgba(0,0,0,0.15);
         }
         .person .torso {
-            width: 16px;
-            height: 48px;
-            background: rgba(255, 255, 255, 0.94);
+            width: 22px;
+            height: 50px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.7));
             position: absolute;
-            top: 24px;
+            top: 28px;
             left: 50%;
-            transform: translateX(-50%);
-            border-radius: 8px;
+            transform: translateX(-50%) translateZ(6px);
+            border-radius: 10px;
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.2);
         }
         .person .arm {
             width: 10px;
-            height: 38px;
-            background: rgba(255, 255, 255, 0.94);
+            height: 42px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.75));
             position: absolute;
             top: 28px;
             border-radius: 8px;
             transform-origin: top center;
             animation: armSwing 0.8s ease-in-out infinite;
+            box-shadow: 0 4px 9px rgba(0,0,0,0.1);
         }
         .person .arm-left {
             left: 16px;
@@ -131,13 +215,14 @@
         }
         .person .leg {
             width: 10px;
-            height: 45px;
-            background: rgba(255, 255, 255, 0.94);
+            height: 48px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.7));
             position: absolute;
             top: 68px;
             border-radius: 8px;
             transform-origin: top center;
             animation: legMove 0.8s ease-in-out infinite;
+            box-shadow: 0 4px 9px rgba(0,0,0,0.1);
         }
         .person .leg-left {
             left: 26px;
@@ -148,26 +233,39 @@
             animation-delay: 0.4s;
         }
         .person .briefcase {
-            width: 36px;
-            height: 24px;
-            background: #ffd56d;
-            border-radius: 6px;
+            width: 40px;
+            height: 26px;
+            background: linear-gradient(180deg, #ffc95c, #ffb248);
+            border-radius: 8px;
             position: absolute;
             top: 42px;
-            right: -18px;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+            right: -22px;
+            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
             animation: briefcaseDrop 1s ease-in forwards;
             animation-delay: 3.2s;
+            transform: translateZ(20px);
         }
         .person .briefcase::before {
             content: '';
             position: absolute;
-            top: -6px;
-            left: 8px;
-            width: 20px;
-            height: 6px;
-            border-radius: 3px;
-            background: #ffd56d;
+            top: -8px;
+            left: 6px;
+            width: 28px;
+            height: 8px;
+            border-radius: 4px;
+            background: #ffcd75;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.12);
+        }
+        .person .briefcase::after {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 100%;
+            width: 6px;
+            height: 18px;
+            background: rgba(255,255,255,0.3);
+            transform: translateX(-2px) skewY(-10deg);
+            border-radius: 2px;
         }
         @keyframes armSwing {
             0%, 100% {
@@ -175,6 +273,14 @@
             }
             50% {
                 transform: rotate(-30deg);
+            }
+        }
+        @keyframes crowdMove {
+            0% {
+                transform: translateZ(-80px) translateY(0);
+            }
+            100% {
+                transform: translateZ(-80px) translateY(-4px);
             }
         }
         @keyframes legMove {
@@ -302,6 +408,22 @@
         <span></span>
     </div>
     <div class="scene">
+        <div class="cityscape">
+            <div class="building b1"></div>
+            <div class="building b2"></div>
+            <div class="building b3"></div>
+            <div class="building b4"></div>
+            <div class="building b5"></div>
+            <div class="building b6"></div>
+        </div>
+        <div class="crowd">
+            <div class="crowd-person"></div>
+            <div class="crowd-person"></div>
+            <div class="crowd-person"></div>
+            <div class="crowd-person"></div>
+            <div class="crowd-person"></div>
+            <div class="crowd-person"></div>
+        </div>
         <div class="person">
             <div class="head"></div>
             <div class="torso"></div>
