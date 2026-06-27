@@ -75,7 +75,150 @@
                 opacity: 0.4;
             }
         }
+        .scene {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            z-index: 1;
+            pointer-events: none;
+        }
+        .person {
+            position: absolute;
+            left: -140px;
+            bottom: 18%;
+            width: 120px;
+            height: 160px;
+            animation: walkFade 4.8s ease-out forwards;
+            z-index: 2;
+        }
+        .person .head {
+            width: 24px;
+            height: 24px;
+            background: rgba(255, 255, 255, 0.94);
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .person .torso {
+            width: 16px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.94);
+            position: absolute;
+            top: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 8px;
+        }
+        .person .arm {
+            width: 10px;
+            height: 38px;
+            background: rgba(255, 255, 255, 0.94);
+            position: absolute;
+            top: 28px;
+            border-radius: 8px;
+            transform-origin: top center;
+            animation: armSwing 0.8s ease-in-out infinite;
+        }
+        .person .arm-left {
+            left: 16px;
+            animation-delay: 0s;
+        }
+        .person .arm-right {
+            right: 14px;
+            animation-delay: 0.2s;
+        }
+        .person .leg {
+            width: 10px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.94);
+            position: absolute;
+            top: 68px;
+            border-radius: 8px;
+            transform-origin: top center;
+            animation: legMove 0.8s ease-in-out infinite;
+        }
+        .person .leg-left {
+            left: 26px;
+            animation-delay: 0s;
+        }
+        .person .leg-right {
+            right: 26px;
+            animation-delay: 0.4s;
+        }
+        .person .briefcase {
+            width: 36px;
+            height: 24px;
+            background: #ffd56d;
+            border-radius: 6px;
+            position: absolute;
+            top: 42px;
+            right: -18px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+            animation: briefcaseDrop 1s ease-in forwards;
+            animation-delay: 3.2s;
+        }
+        .person .briefcase::before {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: 8px;
+            width: 20px;
+            height: 6px;
+            border-radius: 3px;
+            background: #ffd56d;
+        }
+        @keyframes armSwing {
+            0%, 100% {
+                transform: rotate(20deg);
+            }
+            50% {
+                transform: rotate(-30deg);
+            }
+        }
+        @keyframes legMove {
+            0%, 100% {
+                transform: rotate(10deg);
+            }
+            50% {
+                transform: rotate(-15deg);
+            }
+        }
+        @keyframes walkFade {
+            0% {
+                left: -140px;
+                opacity: 1;
+            }
+            65% {
+                left: calc(50% - 70px);
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        @keyframes briefcaseDrop {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            70% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(160px);
+                opacity: 0;
+            }
+        }
         .login-card {
+            position: relative;
+            z-index: 1;
+            opacity: 0;
             width: min(360px, calc(100vw - 40px));
             padding: 32px;
             border-radius: 24px;
@@ -83,6 +226,7 @@
             box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
             backdrop-filter: blur(18px);
             animation: dropFade 0.9s ease-out both;
+            animation-delay: 4.5s;
         }
         .login-card h1 {
             margin: 0 0 24px;
@@ -156,6 +300,17 @@
         <span></span>
         <span></span>
         <span></span>
+    </div>
+    <div class="scene">
+        <div class="person">
+            <div class="head"></div>
+            <div class="torso"></div>
+            <div class="arm arm-left"></div>
+            <div class="arm arm-right"></div>
+            <div class="leg leg-left"></div>
+            <div class="leg leg-right"></div>
+            <div class="briefcase"></div>
+        </div>
     </div>
     <div class="login-card">
         <h1>Login</h1>
