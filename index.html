@@ -5,285 +5,172 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Website</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #2b5acb, #0f1f4f);
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+            overflow: hidden;
+        }
+        .animated-bg {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .animated-bg span {
+            position: absolute;
+            display: block;
+            width: 120px;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
+        }
+        .animated-bg span:nth-child(1) {
+            left: 10%;
+            top: 20%;
+            animation-delay: 0s;
+            animation-duration: 6s;
+        }
+        .animated-bg span:nth-child(2) {
+            right: 12%;
+            top: 10%;
+            animation-delay: 1.5s;
+            animation-duration: 7.5s;
+        }
+        .animated-bg span:nth-child(3) {
+            left: 20%;
+            bottom: 15%;
+            animation-delay: 3s;
+            animation-duration: 9s;
+        }
+        .animated-bg span:nth-child(4) {
+            right: 18%;
+            bottom: 20%;
+            animation-delay: 2s;
+            animation-duration: 8s;
+        }
+        .animated-bg span:nth-child(5) {
+            left: 50%;
+            top: 45%;
+            animation-delay: 4s;
+            animation-duration: 10s;
+        }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+                opacity: 0.7;
+            }
+            50% {
+                transform: translateY(-30px) scale(1.1);
+                opacity: 0.4;
+            }
+        }
+        .login-card {
+            width: min(360px, calc(100vw - 40px));
+            padding: 32px;
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(18px);
+            animation: dropFade 0.9s ease-out both;
+        }
+        .login-card h1 {
+            margin: 0 0 24px;
+            font-size: 1.9rem;
+            letter-spacing: 0.02em;
+            text-align: center;
+        }
+        .input-group {
+            margin-bottom: 18px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.85);
+        }
+        .input-group input {
+            width: 100%;
+            padding: 14px 16px;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            background: rgba(255, 255, 255, 0.08);
+            color: #ffffff;
+            font-size: 1rem;
+            outline: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+        .input-group input:focus {
+            transform: translateY(-1px);
+            box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.32);
+        }
+        .button {
+            width: 100%;
+            padding: 14px 16px;
+            border: none;
+            border-radius: 14px;
+            background: #ffac33;
+            color: #0f1f4f;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+        .button:hover {
+            transform: translateY(-2px);
+            background: #ffd56d;
+        }
+        .footer {
+            margin-top: 18px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.75);
+        }
+        @keyframes dropFade {
+            from {
+                opacity: 0;
+                transform: translateY(-40px) scale(0.97);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+    </style>
 </head>
-<body><!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Omuse Group of Hospitals Survey</title>
-
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
-}
-
-body{
-background:linear-gradient(135deg,#00b4db,#0083b0,#00c9a7);
-padding:30px;
-}
-
-.container{
-max-width:850px;
-margin:auto;
-background:white;
-padding:30px;
-border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,.3);
-}
-
-h1{
-text-align:center;
-color:#0083b0;
-margin-bottom:10px;
-}
-
-h3{
-color:#0083b0;
-margin-bottom:8px;
-}
-
-p{
-text-align:center;
-margin-bottom:20px;
-color:#555;
-}
-
-.progress{
-height:18px;
-background:#f4ad74;
-border-radius:30px;
-overflow:hidden;
-margin-bottom:25px;
-}
-
-.bar{
-height:100%;
-width:100%;
-background:linear-gradient(to right,#00c853,#64dd17);
-}
-
-.question{
-background:#f7faff;
-padding:18px;
-margin-bottom:20px;
-border-left:8px solid #00bcd4;
-border-radius:12px;
-}
-
-label{
-display:block;
-margin:8px 0;
-cursor:pointer;
-}
-
-select{
-width:100%;
-padding:10px;
-border-radius:8px;
-border:1px solid #bbb;
-margin-top:8px;
-}
-
-button{
-width:100%;
-padding:15px;
-font-size:18px;
-background:linear-gradient(to right,#00c853,#00bfa5);
-color:white;
-border:none;
-border-radius:12px;
-cursor:pointer;
-transition:.3s;
-}
-
-button:hover{
-transform:scale(1.03);
-}
-
-.footer{
-margin-top:25px;
-text-align:center;
-color:#777;
-font-size:14px;
-}
-
-#thanks{
-display:none;
-text-align:center;
-padding:30px;
-}
-
-#thanks h2{
-color:green;
-font-size:35px;
-}
-
-#thanks p{
-font-size:20px;
-}
-</style>
-
-</head>
-
 <body>
-
-<div class="container" id="survey">
-
-<h1>🏥 Omuse Group of Hospitals</h1>
-
-<p>
-Medical Services & Procedures Satisfaction Survey
-</p>
-
-<div class="progress">
-<div class="bar"></div>
-</div>
-
-<form onsubmit="submitSurvey(event)">
-
-<div class="question">
-<h3>1. Which hospital did you visit?</h3>
-
-<select required>
-<option value="">Select Hospital</option>
-<option>Main Hospital</option>
-<option>Children's Hospital</option>
-<option>Maternity Hospital</option>
-<option>Dental Clinic</option>
-<option>Eye Clinic</option>
-</select>
-</div>
-
-<div class="question">
-<h3>2. How would you rate our customer service?</h3>
-
-<label><input type="radio" name="q2" required> Excellent</label>
-<label><input type="radio" name="q2"> Good</label>
-<label><input type="radio" name="q2"> Fair</label>
-<label><input type="radio" name="q2"> Poor</label>
-
-</div>
-
-<div class="question">
-<h3>3. Was the hospital clean?</h3>
-
-<label><input type="radio" name="q3" required> Yes</label>
-<label><input type="radio" name="q3"> No</label>
-
-</div>
-
-<div class="question">
-<h3>4. How long did you wait before seeing a healthcare professional?</h3>
-
-<label><input type="radio" name="q4" required> Less than 15 minutes</label>
-<label><input type="radio" name="q4"> 15–30 minutes</label>
-<label><input type="radio" name="q4"> 30–60 minutes</label>
-<label><input type="radio" name="q4"> More than 1 hour</label>
-
-</div>
-
-<div class="question">
-<h3>5. Were the doctors professional?</h3>
-
-<label><input type="radio" name="q5" required> Yes</label>
-<label><input type="radio" name="q5"> No</label>
-
-</div>
-
-<div class="question">
-<h3>6. Which services did you receive? (Select all that apply)</h3>
-
-<label><input type="checkbox"> Consultation</label>
-<label><input type="checkbox"> Laboratory</label>
-<label><input type="checkbox"> X-Ray</label>
-<label><input type="checkbox"> Pharmacy</label>
-<label><input type="checkbox"> Surgery</label>
-<label><input type="checkbox"> Maternity</label>
-
-</div>
-
-<div class="question">
-<h3>7. Was your procedure explained clearly?</h3>
-
-<label><input type="radio" name="q7" required> Yes</label>
-<label><input type="radio" name="q7"> No</label>
-
-</div>
-
-<div class="question">
-<h3>8. Were your medications available?</h3>
-
-<label><input type="radio" name="q8" required> Yes</label>
-<label><input type="radio" name="q8"> Partially</label>
-<label><input type="radio" name="q8"> No</label>
-
-</div>
-
-<div class="question">
-<h3>9. How satisfied are you with our medical procedures?</h3>
-
-<label><input type="radio" name="q9" required> Very Satisfied</label>
-<label><input type="radio" name="q9"> Satisfied</label>
-<label><input type="radio" name="q9"> Neutral</label>
-<label><input type="radio" name="q9"> Dissatisfied</label>
-<label><input type="radio" name="q9"> Very Dissatisfied</label>
-
-</div>
-
-<div class="question">
-<h3>10. Would you recommend Omuse Group of Hospitals to others?</h3>
-
-<label><input type="radio" name="q10" required> Definitely</label>
-<label><input type="radio" name="q10"> Probably</label>
-<label><input type="radio" name="q10"> Not Sure</label>
-<label><input type="radio" name="q10"> Probably Not</label>
-<label><input type="radio" name="q10"> Never</label>
-
-</div>
-
-<button type="submit">
-Submit Survey
-</button>
-
-</form>
-
-<div class="footer">
-© 2026 Omuse Group of Hospitals | Thank you for helping us improve healthcare.
-</div>
-
-</div>
-
-<div class="container" id="thanks">
-
-<h2>✅ Thank You!</h2>
-
-<p>
-Your responses have been successfully submitted.
-</p>
-
-<p>
-Omuse Group of Hospitals appreciates your valuable feedback.
-</p>
-
-</div>
-
-<script>
-
-function submitSurvey(event){
-
-event.preventDefault();
-
-document.getElementById("survey").style.display="none";
-
-document.getElementById("thanks").style.display="block";
-
-}
-
-</script>
-
+    <div class="animated-bg">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="login-card">
+        <h1>Login</h1>
+        <form>
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="you@example.com" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="button">Sign In</button>
+        </form>
+        <div class="footer">Enter your credentials to access your account.</div>
+    </div>
 </body>
 </html>
