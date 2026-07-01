@@ -3,451 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Omuse Grocery</title>
     <style>
-        * {
-            box-sizing: border-box;
-        }
         body {
             margin: 0;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #2b5acb, #0f1f4f);
-            font-family: Arial, sans-serif;
-            color: #ffffff;
-            overflow: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fff1f8 0%, #effaf3 50%, #e7f7ff 100%);
+            color: #1f3d2e;
         }
-        .animated-bg {
-            position: absolute;
-            inset: 0;
-            overflow: hidden;
-            z-index: -1;
-        }
-        .animated-bg span {
-            position: absolute;
-            display: block;
-            width: 120px;
-            height: 120px;
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 50%;
-            animation: float 8s ease-in-out infinite;
-        }
-        .animated-bg span:nth-child(1) {
-            left: 10%;
-            top: 20%;
-            animation-delay: 0s;
-            animation-duration: 6s;
-        }
-        .animated-bg span:nth-child(2) {
-            right: 12%;
-            top: 10%;
-            animation-delay: 1.5s;
-            animation-duration: 7.5s;
-        }
-        .animated-bg span:nth-child(3) {
-            left: 20%;
-            bottom: 15%;
-            animation-delay: 3s;
-            animation-duration: 9s;
-        }
-        .animated-bg span:nth-child(4) {
-            right: 18%;
-            bottom: 20%;
-            animation-delay: 2s;
-            animation-duration: 8s;
-        }
-        .animated-bg span:nth-child(5) {
-            left: 50%;
-            top: 45%;
-            animation-delay: 4s;
-            animation-duration: 10s;
-        }
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0) scale(1);
-                opacity: 0.7;
-            }
-            50% {
-                transform: translateY(-30px) scale(1.1);
-                opacity: 0.4;
-            }
-        }
-        .scene {
-            position: absolute;
-            inset: 0;
-            overflow: hidden;
-            z-index: 1;
-            pointer-events: none;
-            perspective: 1200px;
-        }
-        .cityscape {
-            position: absolute;
-            inset: 0;
-            z-index: 0;
-            overflow: hidden;
-        }
-        .cityscape::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background:
-                radial-gradient(circle at 30% 20%, rgba(255,255,255,0.18), transparent 35%),
-                radial-gradient(circle at 70% 15%, rgba(255,255,255,0.12), transparent 28%);
-            opacity: 0.6;
-        }
-        .building {
-            position: absolute;
-            bottom: 0;
-            width: 80px;
-            background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
-            border: 1px solid rgba(255,255,255,0.12);
-            border-radius: 14px 14px 0 0;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-            opacity: 0.9;
-        }
-        .building.b1 { left: 8%; height: 220px; }
-        .building.b2 { left: 22%; height: 180px; width: 64px; }
-        .building.b3 { left: 38%; height: 250px; width: 96px; }
-        .building.b4 { left: 54%; height: 200px; width: 72px; }
-        .building.b5 { left: 70%; height: 240px; width: 84px; }
-        .building.b6 { left: 84%; height: 190px; width: 60px; }
-        .building::after {
-            content:'';
-            position:absolute;
-            inset:14px auto 14px 14px;
-            width: calc(100% - 28px);
-            height: calc(100% - 28px);
-            background: radial-gradient(circle at top, rgba(255,255,255,0.2), transparent 20%);
-            opacity:0.35;
-        }
-        .crowd {
-            position: absolute;
-            bottom: 16%;
-            left: 0;
-            width: 100%;
-            height: 22%;
-            z-index: 1;
-            display: flex;
-            justify-content: space-between;
-            padding: 0 10%;
-            opacity: 0.8;
-        }
-        .crowd-person {
-            width: 18px;
-            height: 38px;
-            background: rgba(255,255,255,0.88);
-            border-radius: 12px 12px 8px 8px;
-            position: relative;
-            transform: translateZ(-80px) scale(0.85);
-            animation: crowdMove 1.6s ease-in-out infinite alternate;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        .crowd-person::before {
-            content:'';
-            position:absolute;
-            top:-8px;
-            left:50%;
-            width:12px;
-            height:12px;
-            border-radius:50%;
-            background: rgba(255,255,255,0.94);
-            transform: translateX(-50%);
-        }
-        .crowd-person:nth-child(2) { height: 44px; animation-delay: 0.2s; }
-        .crowd-person:nth-child(3) { height: 34px; animation-delay: 0.4s; }
-        .crowd-person:nth-child(4) { height: 40px; animation-delay: 0.1s; }
-        .crowd-person:nth-child(5) { height: 36px; animation-delay: 0.3s; }
-        .crowd-person:nth-child(6) { height: 42px; animation-delay: 0.5s; }
-        .person {
-            position: absolute;
-            left: -160px;
-            bottom: 18%;
-            width: 120px;
-            height: 160px;
-            animation: walkFade 4.8s ease-out forwards;
-            z-index: 2;
-            transform-style: preserve-3d;
-            transform: translateZ(0);
-        }
-        .person .head {
-            width: 28px;
-            height: 28px;
-            background: radial-gradient(circle at 30% 30%, #ffffff, #f5f5f5 70%);
-            border-radius: 50%;
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%) translateZ(12px);
-            box-shadow: 0 3px 6px rgba(0,0,0,0.15);
-        }
-        .person .torso {
-            width: 22px;
-            height: 50px;
-            background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.7));
-            position: absolute;
-            top: 28px;
-            left: 50%;
-            transform: translateX(-50%) translateZ(6px);
-            border-radius: 10px;
-            box-shadow: inset 0 0 0 1px rgba(187, 67, 220, 0.2);
-        }
-        .person .arm {
-            width: 10px;
-            height: 42px;
-            background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.75));
-            position: absolute;
-            top: 28px;
-            border-radius: 8px;
-            transform-origin: top center;
-            animation: armSwing 0.8s ease-in-out infinite;
-            box-shadow: 0 4px 9px rgba(0,0,0,0.1);
-        }
-        .person .arm-left {
-            left: 16px;
-            animation-delay: 0s;
-        }
-        .person .arm-right {
-            right: 14px;
-            animation-delay: 0.2s;
-        }
-        .person .leg {
-            width: 10px;
-            height: 48px;
-            background: linear-gradient(180deg, rgba(8, 251, 16, 0.96), rgba(49, 47, 121, 0.7));
-            position: absolute;
-            top: 68px;
-            border-radius: 8px;
-            transform-origin: top center;
-            animation: legMove 0.8s ease-in-out infinite;
-            box-shadow: 0 4px 9px rgba(0,0,0,0.1);
-        }
-        .person .leg-left {
-            left: 26px;
-            animation-delay: 0s;
-        }
-        .person .leg-right {
-            right: 26px;
-            animation-delay: 0.4s;
-        }
-        .person .briefcase {
-            width: 40px;
-            height: 26px;
-            background: linear-gradient(180deg, #081ade, #0a78f5);
-            border-radius: 8px;
-            position: absolute;
-            top: 42px;
-            right: -22px;
-            box-shadow: 0 10px 22px rgba(234, 9, 9, 0.868);
-            animation: briefcaseDrop 1s ease-in forwards;
-            animation-delay: 3.2s;
-            transform: translateZ(20px);
-        }
-        .person .briefcase::before {
-            content: '';
-            position: absolute;
-            top: -8px;
-            left: 6px;
-            width: 28px;
-            height: 8px;
-            border-radius: 4px;
-            background: #ffcd75;
-            box-shadow: inset 0 1px 3px rgba(0,0,0,0.12);
-        }
-        .person .briefcase::after {
-            content: '';
-            position: absolute;
-            top: 8px;
-            left: 100%;
-            width: 6px;
-            height: 18px;
-            background: rgba(255,255,255,0.3);
-            transform: translateX(-2px) skewY(-10deg);
-            border-radius: 2px;
-        }
-        @keyframes armSwing {
-            0%, 100% {
-                transform: rotate(20deg);
-            }
-            50% {
-                transform: rotate(-30deg);
-            }
-        }
-        @keyframes crowdMove {
-            0% {
-                transform: translateZ(-80px) translateY(0);
-            }
-            100% {
-                transform: translateZ(-80px) translateY(-4px);
-            }
-        }
-        @keyframes legMove {
-            0%, 100% {
-                transform: rotate(10deg);
-            }
-            50% {
-                transform: rotate(-15deg);
-            }
-        }
-        @keyframes walkFade {
-            0% {
-                left: -140px;
-                opacity: 1;
-            }
-            65% {
-                left: calc(50% - 70px);
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-            }
-        }
-        @keyframes briefcaseDrop {
-            0% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-            70% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(160px);
-                opacity: 0;
-            }
-        }
-        .login-card {
-            position: relative;
-            z-index: 1;
-            opacity: 0;
-            width: min(360px, calc(100vw - 40px));
-            padding: 32px;
-            border-radius: 24px;
-            background: rgba(8, 231, 31, 0.12);
-            box-shadow: 0 24px 60px rgba(225, 10, 10, 0.25);
-            backdrop-filter: blur(18px);
-            animation: dropFade 0.9s ease-out both;
-            animation-delay: 4.5s;
-        }
-        .login-card h1 {
-            margin: 0 0 24px;
-            font-size: 1.9rem;
-            letter-spacing: 0.02em;
+        .hero {
+            padding: 60px 20px;
             text-align: center;
         }
-        .input-group {
-            margin-bottom: 18px;
+        .hero h1 {
+            margin: 0 0 20px;
+            font-size: 3rem;
+            color: #285c38;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.12);
         }
-        .input-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-size: 0.95rem;
-            color: rgba(255, 255, 255, 0.85);
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+            color: #2f4a36;
         }
-        .input-group input {
-            width: 100%;
-            padding: 14px 16px;
-            border-radius: 14px;
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            background: rgba(255, 255, 255, 0.08);
-            color: #ffffff;
-            font-size: 1rem;
-            outline: none;
-            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-        }
-        .input-group input:focus {
-            transform: translateY(-1px);
-            box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.12);
-            border-color: rgba(255, 255, 255, 0.32);
-        }
-        .button {
-            width: 100%;
-            padding: 14px 16px;
-            border: none;
-            border-radius: 14px;
-            background: #ffac33;
-            color: #0f1f4f;
-            font-size: 1rem;
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(90deg, #70d677, #2f9854);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 40px;
+            text-decoration: none;
             font-weight: 700;
-            cursor: pointer;
-            transition: transform 0.2s ease, background 0.2s ease;
+            box-shadow: 0 12px 24px rgba(46, 118, 83, 0.18);
         }
-        .button:hover {
-            transform: translateY(-2px);
-            background: #ffd56d;
+        .cards {
+            display: grid;
+            gap: 24px;
+            max-width: 1100px;
+            margin: 40px auto 60px;
+            padding: 0 20px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        }
+        .card {
+            background: white;
+            border-radius: 28px;
+            padding: 24px;
+            box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: rgba(112, 214, 119, 0.15);
+            top: -40px;
+            right: -40px;
+        }
+        .card h2 {
+            margin-top: 0;
+            color: #1d3b26;
+        }
+        .card p {
+            line-height: 1.7;
+            color: #4a5f49;
         }
         .footer {
-            margin-top: 18px;
             text-align: center;
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.75);
-        }
-        @keyframes dropFade {
-            from {
-                opacity: 0;
-                transform: translateY(-40px) scale(0.97);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
+            padding: 24px 20px 40px;
+            color: #3b4c3a;
         }
     </style>
 </head>
 <body>
-    <div class="animated-bg">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-    <div class="scene">
-        <div class="cityscape">
-            <div class="building b1"></div>
-            <div class="building b2"></div>
-            <div class="building b3"></div>
-            <div class="building b4"></div>
-            <div class="building b5"></div>
-            <div class="building b6"></div>
-        </div>
-        <div class="crowd">
-            <div class="crowd-person"></div>
-            <div class="crowd-person"></div>
-            <div class="crowd-person"></div>
-            <div class="crowd-person"></div>
-            <div class="crowd-person"></div>
-            <div class="crowd-person"></div>
-        </div>
-        <div class="person">
-            <div class="head"></div>
-            <div class="torso"></div>
-            <div class="arm arm-left"></div>
-            <div class="arm arm-right"></div>
-            <div class="leg leg-left"></div>
-            <div class="leg leg-right"></div>
-            <div class="briefcase"></div>
-        </div>
-    </div>
-    <div class="login-card">
-        <h1>Login</h1>
-        <form>
-            <div class="input-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" placeholder="you@example.com" required>
-            </div>
-            <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Enter your password" required>
-            </div>
-            <button type="submit" class="button">Sign In</button>
-        </form>
-        <div class="footer">Enter your credentials to access your account.</div>
-    </div>
+
 </body>
 </html>
